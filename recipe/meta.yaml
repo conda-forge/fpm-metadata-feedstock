@@ -6,11 +6,11 @@ package:
   version: {{ version }}
 
 source:
-  url: https://pypi.io/packages/source/f/fpm-metadata/fpm-metadata-{{ version }}.tar.gz
+  url: https://pypi.org/packages/source/f/fpm-metadata/fpm-metadata-{{ version }}.tar.gz
   sha256: ec9a14cf6be6ae56ce906d69cd0bdaaa5775b25dc6e0b18a55c576a26c778967
 
 build:
-  number: 0
+  number: 1
 
 outputs:
   - name: {{ name }}
@@ -21,10 +21,10 @@ outputs:
 
     requirements:
       host:
-        - python >=3.6
+        - python {{ python_min }}
         - pip
       run:
-        - python >=3.6
+        - python >={{ python_min }}
         - pydantic
 
     test:
